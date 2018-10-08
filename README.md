@@ -1,7 +1,5 @@
 ## Project: Estimation
 <p align="center"><img src ="./misc/GPSUpdate.gif" /></p>
----
-
 
 # Required Steps:
 1. Determine the standard deviation of the measurement noise of both GPS X data and Accelerometer X data.
@@ -14,13 +12,13 @@
 ## [Rubric](https://review.udacity.com/#!/rubrics/1807/view) Points
 ### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
-:airplane: Proposed EKF parameters
+##### Proposed EKF parameters
 
 | QPosXYStd | QPosZStd | QVelXYStd | QVelZStd | QYawStd | GPSPosXYStd | GPSPosZStd | GPSVelXYStd | GPSVelZStd | MagYawStd | dtIMU | attitudeTau | 
 | --- | --- | --- | --- |--- | --- | --- | --- |--- | --- | --- | --- |
 |0.05 | 0.05 | 0.18 | 0.1 | 0.2 | 0.7| 2.0 | 0.1 | 0.3 | 0.1 | 0.002 | 100|
 
-:airplane: Proposed controller gains
+##### Proposed controller gains
 
 | kpPosXY| kpPosZ | KiPosZ | kpVelXY | kpVelZ | kpBank | kpYaw | kpPQR |
 | --- | --- | --- | --- |--- | --- | --- | --- |
