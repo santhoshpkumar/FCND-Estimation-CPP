@@ -67,8 +67,8 @@ it is compensated by a low pass filter to clean the signal. In combination we ob
 
 <p align="center"><img src ="./misc/imu_roll_pitch.gif" /></p>
 
-#### :heavy_plus_sign::heavy_plus_sign: UpdateFromIMU() function implementation.
-Refer to lines 99-108 in QuadEstimatorEKF.cpp
+
+Refer [UpdateFromIMU()](./src/QuadEstimatorEKF.cpp#L79-L120) function implementation in QuadEstimatorEKF.cpp
 
 
 ### 3. Implement all of the elements of the prediction step for the estimator.
@@ -96,10 +96,9 @@ Finally we can update the state covariance as follows:
 
 Where Qt is the transition model covariance.
 
-#### :heavy_plus_sign::heavy_plus_sign: UpdateFromIMU() function implementation.
-Refer to lines 172-180 in QuadEstimatorEKF.cpp for the PredictState() function implementation. \
-Refer to lines 208-213 in QuadEstimatorEKF.cpp for the GetRbgPrime() function implementation. \
-Refer to lines 262-273 in QuadEstimatorEKF.cpp for the Predict() function implementation. 
+Refer to lines [148-184](./src/QuadEstimatorEKF.cpp#L148-L184) in QuadEstimatorEKF.cpp for the PredictState() function implementation. \
+Refer to lines [189-217](./src/QuadEstimatorEKF.cpp#L189-L217) in QuadEstimatorEKF.cpp for the GetRbgPrime() function implementation. \
+Refer to lines [222-277](./src/QuadEstimatorEKF.cpp#L222-L277) in QuadEstimatorEKF.cpp for the Predict() function implementation. 
 
 ### 4. Implement the magnetometer update.
 The update should properly include the magnetometer data into the state. Note that the solution should make sure to correctly measure the angle error between the current state and the magnetometer value (error should be the short way around, not the long way).
@@ -116,8 +115,7 @@ Normalize the difference between your measured and estimated yaw, we don't want 
 
 <p align="center"><img src ="./misc/yaw_diff2.png" /></p>
 
-#### :heavy_plus_sign::heavy_plus_sign: Magnetometer update
-Refer to lines 335-340 in QuadEstimatorEKF.cpp
+Refer to lines [321-344](./src/QuadEstimatorEKF.cpp#L321-L344) in QuadEstimatorEKF.cpp
 
 ### 5. Implement the GPS update.
 The estimator should correctly incorporate the GPS information to update the current state estimate.
@@ -126,16 +124,10 @@ Similarly with step 4, GPS update requires to pass the proper parameters to the 
 
 <p align="center"><img src ="./misc/update_params_gps.gif" /></p>
 
-#### :heavy_plus_sign::heavy_plus_sign: Magnetometer update
-Refer to lines 299-312 in QuadEstimatorEKF.cpp
+Refer to lines [282-316](./src/QuadEstimatorEKF.cpp#L282-L316)  in QuadEstimatorEKF.cpp
 
 ### Execute the flight
-#### 1. Does it work?
-It works!
+#### 1. All is Well
+
 <p align="center"><img src ="./misc/MonteCarloTest.gif" /></p>
 
-### References
-[1] [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj#/54894644/) leaf document \
-[2] Quan Quan. Introduction to multicopter design and control. Springer, 2017. \
-[3]  James Diebel. Representing attitude: Euler angles, unit quaternions, and rotation vectors. Matrix, 58
-(15-16):1–35, 2006.
